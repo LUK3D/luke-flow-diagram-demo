@@ -1,6 +1,6 @@
 name: luke_flow_diagram_demo
 description: "A new Flutter project."
-publish_to: 'none'
+publish_to: "none"
 version: 0.1.0
 
 environment:
@@ -9,6 +9,7 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  luke_flow_diagram: ^1.0.2
 
 dev_dependencies:
   flutter_test:

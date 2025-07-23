@@ -99,6 +99,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "5.1.1"
+  luke_flow_diagram:
+    dependency: "direct main"
+    description:
+      name: luke_flow_diagram
+      sha256: "23514654814006338f9c246f3eaf91b3f4ee79ca53eda4577cba124a69ac8ca2"
+      url: "https://pub.dev"
+    source: hosted
+    version: "1.0.2"
   matcher:
     dependency: transitive
     description:

@@ -9,6 +9,7 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  go_router: ^16.0.0
   luke_flow_diagram: ^1.0.2
 
 dev_dependencies:

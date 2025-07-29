@@ -43,7 +43,12 @@ app.*.map.json
 /android/app/profile
 /android/app/release
 /build/macos
-build/837d3416bb09aae8f2fa37c5f718621d/gen_localizations.stamp
 build/837d3416bb09aae8f2fa37c5f718621d/gen_dart_plugin_registrant.stamp
 build/5ed1ec56e46357ec5ad2faed02821e03.cache.dill.track.dill
 /*.stamp
+build/9020fb19390ef41f4137a82b37dfb01f/*
+build/linux/*
+build/flutter_assets/*
+build/native_assets/*
+*/.last_build_id
+build/d7b177071baaf4ee18da1044770cbdc7.cache.dill.track.dill

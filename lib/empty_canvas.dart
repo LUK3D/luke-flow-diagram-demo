@@ -8,7 +8,7 @@ class EmptyCanvas extends StatelessWidget {
   Widget build(BuildContext context) {
     final controller = LukeFlowCanvasController();
     return LukeFlowCanvas(
-      nodes: [],
+      controller: controller,
       nodeBuilder: (node) {
         return Padding(
           padding: const EdgeInsets.all(4.0),
@@ -26,7 +26,6 @@ class EmptyCanvas extends StatelessWidget {
           ),
         );
       },
-      controller: controller,
     );
   }
 }

@@ -42,7 +42,6 @@ class _DemoComponentState extends State<DemoComponent> {
         ),
       ),
       body: LukeFlowCanvas(
-        nodes: [],
         nodeBuilder: (node) {
           return Padding(
             padding: const EdgeInsets.all(4.0),

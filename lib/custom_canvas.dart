@@ -1,14 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:luke_flow_diagram/luke_flow_diagram.dart';
+import 'package:luke_flow_diagram/models/grid_background_settings.dart';
 
-class AddingNodes extends StatefulWidget {
-  const AddingNodes({super.key});
+class CustomCanvas extends StatefulWidget {
+  const CustomCanvas({super.key});
 
   @override
-  State<AddingNodes> createState() => _AddingNodesState();
+  State<CustomCanvas> createState() => _CustomCanvasState();
 }
 
-class _AddingNodesState extends State<AddingNodes> {
+class _CustomCanvasState extends State<CustomCanvas> {
   final controller = LukeFlowCanvasController();
 
   @override
@@ -37,6 +38,17 @@ class _AddingNodesState extends State<AddingNodes> {
     return Container(
       color: Colors.white,
       child: LukeFlowCanvas(
+        bacgrkoundGridSettings: BackgroundGridSettings(
+          xDensity: 50,
+          yDensity: 50,
+          showDots: true,
+          lineColor: const Color.fromARGB(82, 0, 0, 0),
+          lineWidth: 2,
+          dotColor: const Color.fromARGB(255, 0, 0, 0),
+          dotRadius: 2,
+          showLines: true,
+        ),
+        controller: controller,
         nodeBuilder: (node) {
           return Padding(
             padding: const EdgeInsets.all(4.0),
@@ -44,13 +56,9 @@ class _AddingNodesState extends State<AddingNodes> {
               borderRadius: BorderRadius.circular(8),
               color: Colors.black,
               child: Padding(
-                padding: EdgeInsetsGeometry.all(15),
-                child: Column(
+                padding: EdgeInsetsGeometry.all(10),
+                child: Row(
                   children: [
-                    Text(
-                      "🤓",
-                      style: TextStyle(color: Colors.white, fontSize: 40),
-                    ),
                     Text(
                       "This is a node",
                       style: TextStyle(color: Colors.white),
@@ -61,7 +69,6 @@ class _AddingNodesState extends State<AddingNodes> {
             ),
           );
         },
-        controller: controller,
       ),
     );
   }

@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:luke_flow_diagram/luke_flow_diagram.dart';
 
-class CustomCanvas extends StatefulWidget {
-  const CustomCanvas({super.key});
+class DynamicNodes extends StatefulWidget {
+  const DynamicNodes({super.key});
 
   @override
-  State<CustomCanvas> createState() => _CustomCanvasState();
+  State<DynamicNodes> createState() => _DynamicNodesState();
 }
 
-class _CustomCanvasState extends State<CustomCanvas> {
+class _DynamicNodesState extends State<DynamicNodes> {
   final controller = LukeFlowCanvasController();
 
   @override
@@ -32,36 +32,39 @@ class _CustomCanvasState extends State<CustomCanvas> {
     }
   }
 
+  bool isNodeConnceted(NodeModel node) {
+    // Check if the node has any connections
+    return controller.connections.where((connection) {
+      return connection.source.nodeId == node.id;
+    }).isNotEmpty;
+  }
+
   @override
   Widget build(BuildContext context) {
     return Container(
       color: Colors.white,
       child: LukeFlowCanvas(
-        bacgrkoundGridSettings: BackgroundGridSettings(
-          xDensity: 50,
-          yDensity: 50,
-          showDots: true,
-          lineColor: const Color.fromARGB(82, 0, 0, 0),
-          lineWidth: 2,
-          dotColor: const Color.fromARGB(255, 0, 0, 0),
-          dotRadius: 2,
-          showLines: true,
-        ),
         controller: controller,
         nodeBuilder: (node) {
+          final isConnceted = isNodeConnceted(node);
           return Padding(
             padding: const EdgeInsets.all(4.0),
             child: Material(
               borderRadius: BorderRadius.circular(8),
-              color: Colors.black,
+              color: isConnceted ? Colors.amber : Colors.black,
               child: Padding(
                 padding: EdgeInsetsGeometry.all(10),
-                child: Row(
+                child: Column(
                   children: [
                     Text(
                       "This is a node",
                       style: TextStyle(color: Colors.white),
                     ),
+                    if (isConnceted)
+                      Text(
+                        "This node is connected!!",
+                        style: TextStyle(color: Colors.white),
+                      ),
                   ],
                 ),
               ),

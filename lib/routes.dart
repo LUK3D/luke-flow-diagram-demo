@@ -3,6 +3,7 @@ import 'package:luke_flow_diagram_demo/adding_nodes.dart';
 import 'package:luke_flow_diagram_demo/custom_canvas.dart';
 import 'package:luke_flow_diagram_demo/custom_canvas_2.dart';
 import 'package:luke_flow_diagram_demo/demo.dart';
+import 'package:luke_flow_diagram_demo/dynamic_nodes.dart';
 
 import 'empty_canvas.dart';
 
@@ -20,6 +21,10 @@ final router = GoRouter(
     GoRoute(
       path: "/custom-canvas-2",
       builder: (context, state) => CustomCanvas2(),
+    ),
+    GoRoute(
+      path: "/dynamic-nodes",
+      builder: (context, state) => DynamicNodes(),
     ),
   ],
 );

@@ -1,5 +1,6 @@
 import 'package:go_router/go_router.dart';
 import 'package:luke_flow_diagram_demo/adding_nodes.dart';
+import 'package:luke_flow_diagram_demo/connections.dart';
 import 'package:luke_flow_diagram_demo/custom_canvas.dart';
 import 'package:luke_flow_diagram_demo/custom_canvas_2.dart';
 import 'package:luke_flow_diagram_demo/custom_sockets.dart';
@@ -31,5 +32,6 @@ final router = GoRouter(
       path: "/custom-sockets",
       builder: (context, state) => CustomSockets(),
     ),
+    GoRoute(path: "/connections", builder: (context, state) => Connections()),
   ],
 );

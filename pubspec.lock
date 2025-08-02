@@ -124,10 +124,10 @@ packages:
     dependency: "direct main"
     description:
       name: luke_flow_diagram
-      sha256: de83a6d8959c24beac1d6b70616a633813a30b2811233bbc0a693fe0c7631f2b
+      sha256: "466badf1f4faa00a0090f0c3293d97775eef2ea84d22a668eee146d60c705660"
       url: "https://pub.dev"
     source: hosted
-    version: "1.1.0"
+    version: "1.1.1"
   matcher:
     dependency: transitive
     description:

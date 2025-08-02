@@ -1,5 +1,6 @@
 import 'package:go_router/go_router.dart';
 import 'package:luke_flow_diagram_demo/adding_nodes.dart';
+import 'package:luke_flow_diagram_demo/animated_edges.dart';
 import 'package:luke_flow_diagram_demo/connections.dart';
 import 'package:luke_flow_diagram_demo/custom_canvas.dart';
 import 'package:luke_flow_diagram_demo/custom_canvas_2.dart';
@@ -33,5 +34,9 @@ final router = GoRouter(
       builder: (context, state) => CustomSockets(),
     ),
     GoRoute(path: "/connections", builder: (context, state) => Connections()),
+    GoRoute(
+      path: "/animated-edges",
+      builder: (context, state) => AnimatedEdges(),
+    ),
   ],
 );
